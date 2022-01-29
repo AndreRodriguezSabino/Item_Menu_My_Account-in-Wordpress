@@ -1,21 +1,21 @@
 <?php
 
-// Adiciona um EndPoint ao My Account. Neste caso a lista de desejos.
+// Add an EndPoint  toMy Account. In this case the whishlist.
 add_action( 'init', function() {
 	add_rewrite_endpoint( 'wishlist', '/wishlist/' );
 } );
 
-// Adiciona um item ao menu do My Account. Neste caso a lista de desejos.
+// Add an item to menu of My Account. In this case the whishlist.
 add_filter( 'woocommerce_account_menu_items', function($items) {
-	// Guarda dados do item de logout e remove do menu
-	// Necessário para que a lista de desejos não fique como último item
+	// Save logout item data and remove from menu
+	// Necessary so that the wish list is not the last item
 	$logout = $items['customer-logout'];
 	unset($items['customer-logout']);
 
-	// Adiciona o item de lista de desejos
-	$items['wishlist'] = 'Lista de Desejos';
+	// Add the wishlist item
+	$items['wishlist'] = 'Whishlist';
 	
-	// Adiciona novamente o logout para que ele fique como último item
+	// Add logout again so that it is last item
 	$items['customer-logout'] = $logout;
 	
 	return $items;
