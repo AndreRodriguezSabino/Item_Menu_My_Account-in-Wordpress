@@ -1,6 +1,6 @@
 <?php
 
-// Add an EndPoint  toMy Account. In this case the whishlist.
+// Add an EndPoint  to My Account. In this case the whishlist.
 add_action( 'init', function() {
 	add_rewrite_endpoint( 'wishlist', '/wishlist/' );
 } );
